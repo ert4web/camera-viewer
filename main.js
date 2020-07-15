@@ -42,9 +42,10 @@ app.controller("cameraCtrl", function ($scope, $http) {
 					cameraCtrl.auth = btoa(`${cred.username}:${cred.password}`);
 
 
-					// initial time of camera
+					// @todo initial time of camera
+					var initialTime = 1594769451;
 					var sendData = {
-						time: 1594769451,
+						time: initialTime,
 						width: 100,
 						height: 100,
 						fallback: true
@@ -78,6 +79,7 @@ app.controller("cameraCtrl", function ($scope, $http) {
 		}).then((responseData) => {
 			console.log('camera data with frame', responseData);
 
+			// @todo
 			// uncomment code accordingly
 			// don't know which in which format is response
 			// $scope.imgsrc = 'data:image/png;base64, ' + responseData // if its base64
@@ -100,6 +102,7 @@ app.controller("cameraCtrl", function ($scope, $http) {
 		$scope.timer = setInterval(() => {
 			console.log('getting new frame');
 
+			// @todo
 			// time prop with increased time logic goes here
 			var passedTime = 1594769451;
 
