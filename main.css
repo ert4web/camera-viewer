@@ -1,0 +1,23 @@
+.camera-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.camera {
+	height: 400px;
+	width: 400px;
+	margin: 2px;
+
+	/* default img */
+	/* background-image: url(camera.jpg); */
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.camera-name {
+	color: white;
+}
