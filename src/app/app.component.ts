@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppConfig } from './app.config';
 import { HttpService } from './services/http.service';
 import { UserService } from './services/user.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
 	activeStream: any = 1;
 	imgsrc: any = '';
 
-	constructor(private http: HttpService, private userService: UserService) {
+	constructor(private http: HttpService, private userService: UserService, private sanitizer: DomSanitizer) {
 		console.log('cameraCtrl loaded');
 
 	}
@@ -81,6 +82,10 @@ export class AppComponent implements OnInit {
 
 	}
 
+	sanitize(url: string) {
+		return this.sanitizer.bypassSecurityTrustUrl(url);
+	}
+
 	getCameraFrames(data) {
 		console.log('getCameraFrames called');
 		let url = this.appConfig.apiUrls.getFrame
@@ -92,14 +97,17 @@ export class AppComponent implements OnInit {
 			fallback: data.fallback
 		}
 
-		this.http.get(url, params).then((responseData: any) => {
+		this.http.get(url, params, 'blob').then((responseData: any) => {
 			console.log('camera data with frame', responseData);
+
+			var img = window.URL.createObjectURL(responseData)
+			console.log('img', img);
 
 			// @todo
 			// uncomment code accordingly
 			// don't know which in which format is response
 			// $scope.imgsrc = 'data:image/png;base64, ' + responseData // if its base64
-			// $scope.imgsrc = responseData // if its url
+			this.imgsrc = img // if its url
 
 
 			if (this.loadTimer) {

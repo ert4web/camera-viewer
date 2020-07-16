@@ -16,3 +16,8 @@ Run `npm i` then `ng serve` and Navigate to `http://localhost:4200/`. The app wi
 # Todo
 	
 	'@todo' is remaining
+
+# useful links
+
+	https://stackoverflow.com/questions/46408537/angular-httpclient-http-failure-during-parsing
+	https://stackoverflow.com/questions/7650587/using-javascript-to-display-a-blob

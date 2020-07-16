@@ -1,9 +1,11 @@
 <div>
 	<h2 class="header">Camera Viewer</h2>
 	<div class="camera-container">
-		<div class="camera" [ngStyle]="{'background-image': imgsrc ? imgsrc : 'url(assets/imgs/camera.jpg)'}">
+		<!-- <div class="camera" [ngStyle]="{'background-image': imgsrc ? imgsrc : 'url(assets/imgs/camera.jpg)'}"> -->
+		<div class="camera">
 			<div class="camera-name">
 			</div>
+			<img class="camera-image" [src]="sanitize(imgsrc)" />
 		</div>
 	</div>
 </div>

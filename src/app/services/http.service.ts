@@ -20,12 +20,13 @@ export class HttpService {
 		return headers;
 	}
 
-	get(url: string, params?: any) {
+	get(url: string, params?: any, responseType?: any) {
 		const headers: any = this.createAuthorizationHeader();
 
 		return this.http.get(url, {
 			headers: headers,
-			params: params ? params : null
+			params: params ? params : null,
+			responseType
 		}).toPromise();
 	}
 
