@@ -1,3 +1,7 @@
+.header {
+	text-align: center;
+}
+
 .camera-container {
 	display: flex;
 	flex-direction: row;
@@ -11,7 +15,6 @@
 	height: 400px;
 	width: 400px;
 	margin: 2px;
-
 	/* default img */
 	/* background-image: url(camera.jpg); */
 	background-repeat: no-repeat;
