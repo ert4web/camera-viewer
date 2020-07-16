@@ -8,8 +8,8 @@ Run `npm i` then `ng serve` and Navigate to `http://localhost:4200/`. The app wi
 
 # Configs (main.js)
 
-	* Set user credential in cred obj
-	* Set refrech interval time in config obj
+	* Set user credential in src/app/app.config.ts
+	* Set refrech interval time in src/app/app.config.ts
 	* Set 'initialTime' of camera to fetch frames
 
 
